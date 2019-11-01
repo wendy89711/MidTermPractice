@@ -30,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        startActivity(new Intent(this, TestActivity.class));
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         name = findViewById(R.id.ed_username);
@@ -53,14 +52,18 @@ public class MainActivity extends AppCompatActivity {
         name.getText();
         pass.getText();
         if (name.length() >= 3 && pass.length() >= 6 && mail.length() != 0) {
-
-            new AlertDialog.Builder(MainActivity.this)
-                    .setTitle("Registration Success")
-                    .setMessage("Welcome")
-                    .setPositiveButton("OK", null)
-                    .show();
+//            new AlertDialog.Builder(MainActivity.this)
+//                    .setTitle("Registration Success")
+//                    .setMessage("Welcome")
+//                    .setPositiveButton("OK", null)
+//                    .show();
             Intent intent = new Intent(this,ResultActivity.class);
             startActivity(intent);//無法案ok跑到下一個介面
+//            new AlertDialog.Builder(MainActivity.this)
+//                    .setTitle("Registration Success")
+//                    .setMessage("Welcome")
+//                    .setPositiveButton("OK", null)
+//                    .show();
         } else if (name.length() < 3) {
             errorName.setVisibility(View.VISIBLE);
         } else if (pass.length() < 6) {
