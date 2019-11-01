@@ -3,6 +3,7 @@ package com.wen;
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView pass;
     private ImageView errorName;
     private ImageView errorPassword;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,11 +53,14 @@ public class MainActivity extends AppCompatActivity {
         name.getText();
         pass.getText();
         if (name.length() >= 3 && pass.length() >= 6 && mail.length() != 0) {
+
             new AlertDialog.Builder(MainActivity.this)
                     .setTitle("Registration Success")
                     .setMessage("Welcome")
                     .setPositiveButton("OK", null)
                     .show();
+            Intent intent = new Intent(this,ResultActivity.class);
+            startActivity(intent);//無法案ok跑到下一個介面
         } else if (name.length() < 3) {
             errorName.setVisibility(View.VISIBLE);
         } else if (pass.length() < 6) {
