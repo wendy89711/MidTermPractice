@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView mail;
     private TextView pass;
     private ImageView errorName;
+    private ImageView errorPassword;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         mail = findViewById(R.id.ed_email);
         pass = findViewById(R.id.ed_password);
         errorName = findViewById(R.id.imageView_name);
+        errorPassword = findViewById(R.id.imageView_pass);
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,15 +50,22 @@ public class MainActivity extends AppCompatActivity {
     public void registerButton(View view) {
         name.getText();
         pass.getText();
-        if (name.length() >= 3 && pass.length() >= 6) {
+        if (name.length() >= 3 && pass.length() >= 6 && mail.length() != 0) {
             new AlertDialog.Builder(MainActivity.this)
                     .setTitle("Registration Success")
                     .setMessage("Welcome")
                     .setPositiveButton("OK", null)
                     .show();
-        }else if (name.length() < 3) {
+        } else if (name.length() < 3) {
             errorName.setVisibility(View.VISIBLE);
-
+        } else if (pass.length() < 6) {
+            errorPassword.setVisibility(View.VISIBLE);
+        } else if (mail.length() == 0) {
+            new AlertDialog.Builder(MainActivity.this)
+                    .setTitle("Error")
+                    .setMessage("email can not empty.")
+                    .setPositiveButton("OK",null)
+                    .show();
         }
     }
 
