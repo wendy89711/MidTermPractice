@@ -8,8 +8,18 @@
     tools:context=".MainActivity"
     tools:showIn="@layout/activity_main">
 
+    <ImageView
+        android:id="@+id/imageView_pass"
+        android:layout_width="51dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="16dp"
+        android:visibility="gone"
+        app:layout_constraintStart_toEndOf="@+id/ed_password"
+        app:layout_constraintTop_toTopOf="@+id/ed_password"
+        app:srcCompat="@drawable/ban" />
+
     <TextView
-        android:id="@+id/ed_username"
+        android:id="@+id/username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="user name"
@@ -21,24 +31,24 @@
         app:layout_constraintVertical_bias="0.042" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/ed_username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Wendy"
-        app:layout_constraintStart_toStartOf="@+id/ed_username"
-        app:layout_constraintTop_toBottomOf="@+id/ed_username" />
+        app:layout_constraintStart_toStartOf="@+id/username"
+        app:layout_constraintTop_toBottomOf="@+id/username" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:text="email"
-        app:layout_constraintStart_toStartOf="@+id/editText"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintStart_toStartOf="@+id/ed_username"
+        app:layout_constraintTop_toBottomOf="@+id/ed_username" />
 
     <EditText
         android:id="@+id/ed_email"
@@ -47,17 +57,37 @@
         android:layout_marginTop="12dp"
         android:ems="10"
         android:inputType="textEmailAddress"
-        app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintStart_toStartOf="@+id/email"
+        app:layout_constraintTop_toBottomOf="@+id/email" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:text="password"
         app:layout_constraintStart_toStartOf="@+id/ed_email"
         app:layout_constraintTop_toBottomOf="@+id/ed_email" />
+
+    <ImageView
+        android:id="@+id/imageView_name"
+        android:layout_width="51dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="16dp"
+        android:visibility="gone"
+        app:layout_constraintStart_toEndOf="@+id/ed_username"
+        app:layout_constraintTop_toTopOf="@+id/ed_username"
+        app:srcCompat="@drawable/ban" />
+
+    <Button
+        android:id="@+id/registerButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:onClick="registerButton"
+        android:text="SIGN UP"
+        app:layout_constraintStart_toStartOf="@+id/ed_password"
+        app:layout_constraintTop_toBottomOf="@+id/ed_password" />
 
     <EditText
         android:id="@+id/ed_password"
@@ -66,25 +96,7 @@
         android:layout_marginTop="12dp"
         android:ems="10"
         android:inputType="textPassword"
-        app:layout_constraintStart_toStartOf="@+id/textView2"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="51dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="16dp"
-        app:layout_constraintStart_toEndOf="@+id/editText"
-        app:layout_constraintTop_toTopOf="@+id/editText"
-        app:srcCompat="@drawable/ban" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="59dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="16dp"
-        app:layout_constraintStart_toEndOf="@+id/ed_password"
-        app:layout_constraintTop_toTopOf="@+id/ed_password"
-        app:srcCompat="@drawable/ban" />
+        app:layout_constraintStart_toStartOf="@+id/password"
+        app:layout_constraintTop_toBottomOf="@+id/password" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
